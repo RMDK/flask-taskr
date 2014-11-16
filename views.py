@@ -47,6 +47,7 @@ def flash_errors(form):
 ################
 
 @app.route('/logout/')
+@login_required
 def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
