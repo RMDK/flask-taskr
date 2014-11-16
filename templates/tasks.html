@@ -4,19 +4,45 @@
 	<a href='/logout'>Logout</a>
 	<div class='add-task'>
 		<h3>Add a new request:</h3>
-		<table>
-			<tr>
 			<form action="{{ url_for('new_task') }}" method="post">
 				{{ form.csrf_token }}
-				<p>{{ form.name.label }}: {{form.name}}&nbsp;
-				{{ form.due_date.label }}: {{form.due_date}}&nbsp;
-				{{ form.priority.label }}: {{form.priority}}</p>
-				<p><input type='submit' value='Submit'></p>
-				</form>
-			</tr>
-		</table>
-	</div>
-	<div class='entries'>
+				<p>
+				{{ form.name(placeholder="Request Subject")}}
+				<span class='error'>
+					{% if form.name.errors %}
+					{% for error in form.name.errors %}
+					{{ error }}
+					{% endfor %}
+					{% endif %}
+				</span>
+
+				</p>
+				<p>
+				{{ form.due_date(placeholder="Due Date")}}
+				<span class='error'>
+					{% if form.due_date.errors %}
+					{% for error in form.due_date.errors %}
+					{{ error }}
+					{% endfor %}
+					{% endif %}
+				</span>
+
+				</p>
+				<p>
+				{{ form.priority.label }}
+				{{ form.priority }}
+				<span class='error'>
+					{% if form.priority.errors %}
+					{% for error in form.priority.errors %}
+					{{ error }}
+					{% endfor %}
+					{% endif %}
+				</span>
+				</p>
+			<p>
+				<input type="submit" name="" value="Submit">
+			</p>
+				
 		<br>
 		<br>
 		<h2>Currently Open Requests:</h2>
