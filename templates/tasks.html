@@ -1,9 +1,9 @@
 {% extends 'template.html' %}
 {% block content %}
-	<h1>Welcome to iGaming Taskr</h1>
-	<a href='/logout'>Logout</a>
+	<h2 style='text-align:center;'>iGaming Analytics Taskr</h2>
+	<hr>
 	<div class='add-task'>
-		<h3>Add a new request:</h3>
+		<h4>Add a new request:</h4>
 			<form action="{{ url_for('new_task') }}" method="post">
 				{{ form.csrf_token }}
 				<p>
@@ -39,13 +39,15 @@
 					{% endif %}
 				</span>
 				</p>
+				<br>
 			<p>
-				<input type="submit" name="" value="Submit">
+				<button type="submit" class='btn btn-sm btn-success'>Submit</button>
 			</p>
 				
 		<br>
 		<br>
-		<h2>Currently Open Requests:</h2>
+		<h3>Currently Open Requests:</h3>
+		<hr>
 		<div class='datagrid'>
 			<table>
 				<thead>
@@ -77,7 +79,8 @@
 <br>
 </div>
 <div class='entries'>
-<h2>Closed Requests </h2>
+<h3>Closed Requests </h3>
+<hr>
 <div class='datagrid'>
 	<table>
 		<thead> <tr>
