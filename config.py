@@ -8,7 +8,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 DATABASE = 'flasktaskr.db'
 CSRF_ENABLED = True
 SECRET_KEY = 'my_precious'  # must be more random key
-DEBUG = False
+DEBUG = True
 # Define full path for DATABASE
 DATABASE_PATH = os.path.join(basedir, DATABASE)
 
