@@ -1,8 +1,12 @@
+<!-- /project/users/templates/register.html -->
+
 {% extends "template.html" %}
+
 {% block content %}
-  <h1>Welcome to iGaming Analytics Taskr.</h1>
-  <h3>Please register to access the task list.</h3>
-    <form method="POST" action="">
+
+  <h2>Welcome</h2>
+    <form class='form-signin' role='form' method="POST" action="">
+    <div class='lead'>Please register to access the task list.</div>
       {{ form.csrf_token }}
       <p>
       	{{ form.name(placeholder='name') }}
@@ -47,7 +51,7 @@
       <button type="submit" class='btn btn-sm btn-success'>Register</button>
       <br>
       <br>
-       <p><em>Already registered?</em> Click <a href="/">here</a> to login.</p>
+       <p><em>Already registered?</em> Click <a href="{{ url_for('users.login') }}">here</a> to login.</p>
     </form>
    
 {% endblock %}

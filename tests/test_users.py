@@ -1,9 +1,9 @@
 import os
 import unittest
 
-from views import app, db
+from project import app, db, bcrypt
 from config import basedir
-from models import User
+from project.models import Task, User
 
 TEST_DB = 'test.db'
 
@@ -15,11 +15,14 @@ class ALLTests(unittest.TestCase):
 	def setUp(self):
 		app.config['TESTING'] = True
 		app.config['WTF_CSRF_ENABLED'] = False
+		app.config['DEBUG'] = False
 		app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
 			os.path.join(basedir, TEST_DB)
 		self.app = app.test_client()
 		db.create_all()
 
+		self.assertEquals(app.debug, False)
+		
 	# executed after each test
 	def tearDown(self):
 		db.drop_all()
@@ -28,30 +31,32 @@ class ALLTests(unittest.TestCase):
 	
 	# logs a user in so we dont have to rewrite code
 	def login(self, name, password):
-		return self.app.post('/', data=dict(name=name, password=password), 
+		return self.app.post('/users/', data=dict(name=name, password=password), 
 			follow_redirects=True)
 	
 	def register(self):
-		return self.app.post('register/', data=dict(name='kellyrm',email='kellyrm321@gmail.com',
+		return self.app.post('users/register/', data=dict(name='kellyrm',email='kellyrm321@gmail.com',
 			password='yssirk123', confirm='yssirk123'), follow_redirects=True)
 
 	def register_error(self):
-		return self.app.post('register/', data=dict(name='kellyrm',email='kellyrm321fkew.com',
+		return self.app.post('users/register/', data=dict(name='kellyrm',email='kellyrm321fkew.com',
 			password='yssirk123', confirm=''), follow_redirects=True)
 
 
 	def create_user(self):
-		new_user = User(name='kellyrm', email='email.ryan@gmail.com', password='yssirk123')
+		new_user = User(name='kellyrm', email='email.ryan@gmail.com', 
+			password=bcrypt.generate_password_hash('yssirk123'))
 		db.session.add(new_user)
 		db.session.commit()
 
 	def create_user2(self):
-		new_user = User(name='cacolvil', email='cacolvil@gmail.com', password='yssirk123')
+		new_user = User(name='cacolvil', email='cacolvil@gmail.com', 
+			password=bcrypt.generate_password_hash('yssirk123'))
 		db.session.add(new_user)
 		db.session.commit()
 
 	def create_task(self):
-		return self.app.post('add/', data=dict(
+		return self.app.post('tasks/add/', data=dict(
 			name='Go to the bank', 
 			due_date='02-05-2014',
 			priority='1',
@@ -60,7 +65,7 @@ class ALLTests(unittest.TestCase):
 			follow_redirects=True)
 
 	def logout(self):
-		return self.app.get('logout/', follow_redirects=True)
+		return self.app.get('users/logout/', follow_redirects=True)
 
 
 #### TESTS ####
@@ -76,11 +81,11 @@ class ALLTests(unittest.TestCase):
 		self.register()
 		self.login('kellyrm', 'yssirk123')
 		response = self.logout()
-		self.assertIn('You are logged out. Bye. :(', response.data)
+		self.assertIn('You are logged out.', response.data)
 
 	def test_not_logged_in_cannot_logout(self):
 		response = self.logout()
-		self.assertNotIn('You are logged out. Bye. :(', response.data)
+		self.assertNotIn('You are logged out.', response.data)
 		
 	def test_duplicate_user_registration_error(self):
 		self.register()
@@ -94,7 +99,13 @@ class ALLTests(unittest.TestCase):
 
 	def test_users_cannot_login_unless_registered(self):
 		response = self.login('foo', 'bar')
-		self.assertIn('Invalid username or password.', response.data)
+		self.assertIn('Cannot find that username.', response.data)
+
+	def test_task_template_displays_loggedin_username(self):
+		self.register()
+		self.login('kellyrm', 'yssirk123')
+		response = self.app.get('tasks/tasks/', follow_redirects=True)
+		self.assertIn('kellyrm', response.data)
 
 ## MODELS ##
 
@@ -113,18 +124,18 @@ class ALLTests(unittest.TestCase):
 ## FORMS ##
 
 	def test_form_is_present_on_login_page(self):
-		response = self.app.get('/')
+		response = self.app.get('/users/')
 		self.assertEquals(response.status_code, 200)
 		self.assertIn('Please sign in to access your task list', response.data)
 
 
 	def test_invalid_login_data(self):
 		self.register()
-		response = self.login('alert("alert box!);', 'foo')
-		self.assertIn('Invalid username or password.', response.data)
+		response = self.login('kellyrm', 'alert(SELECT*)')
+		self.assertIn("Invalid password / username combination.", response.data)
 
 	def test_form_is_present_on_register_page(self):
-		response = self.app.get('register/')
+		response = self.app.get('users/register/')
 		self.assertEquals(response.status_code, 200)
 		self.assertIn('Please register to access the task list', response.data)
 

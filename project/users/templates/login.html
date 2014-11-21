@@ -1,16 +1,20 @@
+<!-- /project/users/templates/login.html -->
+
 {% extends "template.html" %}
+
 {% block content %}
-	<h1>Welcome to iGaming Analytics Taskr.</h1>
-	<form class='form-signin' role='form' method='post' action='/'>
+
+	<h2>Welcome</h2>
+	<form class='form-signin' role='form' method='post' action='/users/'>
 	{{ form.csrf_token }}
 	<div class='lead'>Please sign in to access your task list</div>
 	<p>
 		{{ form.name(placeholder='name') }}
 		<span class='error'>
 		{% if form.name.errors %}
-		{% for error in form.name.errors %}
-		{{ error }}
-		{% endfor %}
+			{% for error in form.name.errors %}
+				{{ error }}
+			{% endfor %}
 		{% endif %}
 		</span>
 	</p>
@@ -18,9 +22,9 @@
 		{{ form.password(placeholder='password') }}
 		<span class='error'>
 		{% if form.password.errors %}
-		{% for error in form.password.errors %}
-		{{ error }}
-		{% endfor %}
+			{% for error in form.password.errors %}
+				{{ error }}
+			{% endfor %}
 		{% endif %}
 		</span>
 	</p>
@@ -28,6 +32,6 @@
 		
 	</div>
 	<button type="submit" class='btn btn-small btn-success' >Sign in</button>
-	<p style='padding-top:20px;'><em>Need an account? </em><a href='/register'>Signup!</a></p>
+	<p style='padding-top:20px;'><em>Need an account? </em><a href="{{ url_for('users.register') }}">Signup!</a></p>
 	</form>
 {% endblock %}
