@@ -65,17 +65,20 @@ if not app.debug:
 
 def index(page):
     return redirect(url_for('tasks.tasks'))
-    app.logger.warning('A warning occurred (%d apples)', 42)
-    app.logger.error('An error occurred')
-    app.logger.info('Info')
-
-@app.errorhandler(404)
-def internal_error(error):
-    app.logger.warning('404 Warning')
-    return render_template('404.html'), 404
+    # app.logger.warning('A warning occurred (%d apples)', 42)
+    # app.logger.error('An error occurred')
+    # app.logger.info('Info')
 
 @app.errorhandler(500)
 def internal_error(error):
     db.session.rollback()
     app.logger.warning('500 Error')
     return render_template('500.html'), 500
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    app.logger.warning('404 Warning')
+    return render_template('404.html'), 404
+
+

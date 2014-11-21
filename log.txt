@@ -37,3 +37,32 @@ Traceback (most recent call last):
     return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
 ValueError: Invalid salt
 [2014-11-20 20:50:46,741] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 500 Error
+[2014-11-20 21:12:45,940] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:27:13,030] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:29:51,002] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:32:05,973] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:33:07,605] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/ [POST]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/users/views.py", line 52, in login
+    u.password, request.form['password']):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_bcrypt.py", line 180, in check_password_hash
+    return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+ValueError: Invalid salt
+[2014-11-20 21:33:07,606] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 500 Error
+[2014-11-20 21:36:10,415] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:38:29,767] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:42:47,936] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:74} WARNING - 404 Warning
+[2014-11-20 21:51:46,275] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 404 Warning
+[2014-11-20 21:53:40,871] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 404 Warning
+[2014-11-20 21:55:14,153] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 404 Warning
+[2014-11-20 22:20:38,289] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning

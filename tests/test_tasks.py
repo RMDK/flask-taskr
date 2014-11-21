@@ -20,7 +20,7 @@ class ALLTests(unittest.TestCase):
 			os.path.join(basedir, TEST_DB)
 		self.app = app.test_client()
 		db.create_all()
-
+		
 		self.assertEquals(app.debug, False)
 
 	# executed after each test
