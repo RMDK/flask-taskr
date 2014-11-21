@@ -3,7 +3,7 @@ import unittest
 
 from project import app, db, bcrypt
 from config import basedir
-from project.models import Task, User
+from project.models import User
 
 TEST_DB = 'test.db'
 
