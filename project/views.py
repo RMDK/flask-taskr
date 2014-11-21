@@ -7,6 +7,7 @@
 from project import app, db
 from flask import flash, redirect, session, url_for, render_template
 from functools import wraps
+import logging
 
 
 ##########################
@@ -30,6 +31,33 @@ def flash_errors(form):
                 getattr(form, field).label.text, error)
 
 ################
+#### logging ###
+################
+
+# ADMINS = ['kellyrm321@gmail.com']
+# if not app.debug:
+#     from logging.handlers import SMTPHandler
+#     mail_handler = SMTPHandler('127.0.0.1',
+#                                'server-error@example.com',
+#                                ADMINS, 'YourApplication Failed')
+#     mail_handler.setLevel(logging.ERROR)
+#     app.logger.addHandler(mail_handler)
+
+if not app.debug:
+    from logging.handlers import RotatingFileHandler
+    # Get error location
+    formatter = logging.Formatter(
+        "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+    handler = RotatingFileHandler('log.txt', maxBytes=10000000, backupCount=1)
+    handler.setLevel(logging.WARNING)
+    handler.setFormatter(formatter)
+    app.logger.addHandler(handler)
+    # Get wekzeug errors
+    log = logging.getLogger('werkzeug')
+    log.setLevel(logging.DEBUG)
+    log.addHandler(handler)
+
+################
 #### routes ####
 ################
 
@@ -37,11 +65,17 @@ def flash_errors(form):
 
 def index(page):
     return redirect(url_for('tasks.tasks'))
+    app.logger.warning('A warning occurred (%d apples)', 42)
+    app.logger.error('An error occurred')
+    app.logger.info('Info')
 
 @app.errorhandler(404)
 def internal_error(error):
+    app.logger.warning('404 Warning')
     return render_template('404.html'), 404
 
 @app.errorhandler(500)
 def internal_error(error):
+    db.session.rollback()
+    app.logger.warning('500 Error')
     return render_template('500.html'), 500
