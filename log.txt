@@ -66,3 +66,21 @@ ValueError: Invalid salt
 [2014-11-20 21:53:40,871] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 404 Warning
 [2014-11-20 21:55:14,153] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:80} WARNING - 404 Warning
 [2014-11-20 22:20:38,289] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning
+[2014-11-22 22:43:59,714] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /api/tasks/209 [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/api/views.py", line 51, in task
+    'task_id': r.task_id,
+AttributeError: 'NoneType' object has no attribute 'task_id'
+[2014-11-22 22:43:59,717] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:75} WARNING - 500 Error
+[2014-11-22 22:53:13,313] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning
+[2014-11-22 22:53:13,324] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning

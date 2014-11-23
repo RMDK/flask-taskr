@@ -56,13 +56,29 @@ class ApiTests(unittest.TestCase):
 	##### views ######
 	##################
 
-	def test_collection_endpoint_returns_crrent_data(self):
+	def test_collection_endpoint_returns_correct_data(self):
 		self.add_tasks()
 		response = self.app.get('api/tasks/', follow_redirects=True)
 		self.assertEquals(response.status_code, 200)
 		self.assertEquals(response.mimetype, 'application/json')
 		self.assertIn('count to ten', response.data)
 		self.assertIn('eat some breakfast', response.data)
+
+	def test_resource_endpoint_returns_correct_data(self):
+		self.add_tasks()
+		response = self.app.get('api/tasks/2', follow_redirects=True)
+		self.assertEquals(response.status_code, 200)
+		self.assertEquals(response.mimetype,'application/json')
+		self.assertNotIn('count to ten', response.data)
+		self.assertIn('eat some breakfast', response.data)
+
+	def test_invalid_resource_endpoint_is_error(self):
+		self.add_tasks()
+		response = self.app.get('api/tasks/321', follow_redirects=True)
+		self.assertEquals(response.status_code, 404)
+		self.assertEquals(response.mimetype, 'application/json')
+		self.assertIn('What you are searching for does not exist.', response.data)
+
 
 if __name__ == '__main__':
 	unittest.main()
