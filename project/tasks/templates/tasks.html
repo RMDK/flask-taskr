@@ -1,55 +1,23 @@
 <!-- /project/tasks/templates/tasks.html -->
 
 {% extends 'template.html' %}
-
-{% block content %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block page_content %}
 
 	<h2 style='text-align:center;'>iGaming Analytics Taskr</h2>
 	
 	<div class='add-task'>
 		<div class='lead'>Add a new request:</div>
-		<form action= "{{ url_for('tasks.new_task') }}" method="post">
-				{{ form.csrf_token }}
-				<p>
-				{{ form.name(placeholder="Request Subject")}}
-				<span class='error'>
-					{% if form.name.errors %}
-					{% for error in form.name.errors %}
-					{{ error }}
-					{% endfor %}
-					{% endif %}
-				</span>
+		<form action= "{{ url_for('tasks.new_task') }}" class="form form-inline" method="post" role="form">
+		  {{ form.hidden_tag() }}
+		  {{ wtf.form_errors(form, hiddens="only") }}
+		  {{ wtf.form_field(form.name, placeholder='Request Subject') }}
+		  {{ wtf.form_field(form.due_date, placeholder='Due Date') }}
+		  {{ wtf.form_field(form.priority) }}
+		  {{ wtf.form_field(form.content, placeholder='Request') }}
+		  {{ wtf.form_field(form.submit, button_map={'submit':'success'}) }}
+		</form>
 
-				</p>
-				<p>
-				{{ form.due_date(placeholder="Due Date")}}
-				<span class='error'>
-					{% if form.due_date.errors %}
-					{% for error in form.due_date.errors %}
-					{{ error }}
-					{% endfor %}
-					{% endif %}
-				</span>
-
-				</p>
-				<p>
-				{{ form.priority.label }}
-				{{ 
-				form.priority(class='form-control')
-				 }}
-				<span class='error'>
-					{% if form.priority.errors %}
-					{% for error in form.priority.errors %}
-					{{ error }}
-					{% endfor %}
-					{% endif %}
-				</span>
-				</p>
-				<br>
-			<p>
-				<button type="submit" class='btn btn-sm btn-success'>Submit</button>
-			</p>
-	</form>
 	</div>
 <div class='entries'>
 <br>
@@ -71,8 +39,8 @@
 		{% for o in open_tasks %}
 		<tr>
 			<td>{{ o.name }}</td> 
-			<td>{{ o.due_date }}</td>
-			<td>{{ o.posted_date }}</td>  
+			<td>{{ moment(o.due_date).fromNow(refresh=True) }} </td>
+			<td>{{ moment(o.posted_date).fromNow(refresh=True) }}</td>  
 			<td>{{ o.priority }}</td> 
 			<td>{{ o.poster.name }}</td> 
 			<td>
@@ -107,11 +75,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		{% for c in open_tasks %}
+		{% for c in closed_tasks %}
 		<tr>
 			<td>{{ c.name }}</td> 
-			<td>{{ c.due_date }}</td>
-			<td>{{ c.posted_date }}</td>  
+			<td>{{ moment(c.due_date).fromNow(refresh=True) }} </td>
+			<td>{{ moment(c.posted_date).fromNow(refresh=True) }}</td> 
 			<td>{{ c.priority }}</td> 
 			<td>{{ c.poster.name }}</td> 
 			<td>
@@ -123,9 +91,6 @@
 				
 			</td> 
 			</tr>
-			}
-			}
-			}
 		{% endfor %} 
 	</tbody>
 </table>

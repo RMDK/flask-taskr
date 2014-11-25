@@ -50,6 +50,7 @@ def new_task():
         if form.validate_on_submit():
             new_task = Task(
                 form.name.data,
+                form.content.data,
                 form.due_date.data,
                 form.priority.data,
                 datetime.utcnow(),

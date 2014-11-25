@@ -23,9 +23,16 @@ th {
 
 }
 
-.form-control {
-	max-width:60px;
+textarea.form-control {
+height: 37px;
 }
+/*#priority.form-control {
+	max-width:50px;
+}
+#submit.form-control {
+	max-width:50px;
+}*/
+
 textarea:hover, 
 input:hover, 
 textarea:active, 

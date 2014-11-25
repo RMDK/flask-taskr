@@ -84,3 +84,516 @@ AttributeError: 'NoneType' object has no attribute 'task_id'
 [2014-11-22 22:43:59,717] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:75} WARNING - 500 Error
 [2014-11-22 22:53:13,313] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning
 [2014-11-22 22:53:13,324] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:81} WARNING - 404 Warning
+[2014-11-24 22:44:12,047] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:94} WARNING - 404 Warning
+[2014-11-24 22:45:49,925] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-24 22:46:02,011] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-24 22:46:42,754] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-24 22:46:42,755] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewf [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 95, in page_not_found
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:46:42,762] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:85} WARNING - 500 Error
+[2014-11-24 22:46:48,091] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-24 22:46:48,093] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/ffe [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 95, in page_not_found
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:46:48,094] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:85} WARNING - 500 Error
+[2014-11-24 22:47:02,743] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-24 22:47:02,744] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/ffe [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 95, in page_not_found
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:47:02,750] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:85} WARNING - 500 Error
+[2014-11-24 22:48:41,319] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:88} WARNING - 404 Warning
+[2014-11-24 22:49:04,958] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:88} WARNING - 404 Warning
+[2014-11-24 22:50:02,032] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:89} WARNING - 404 Warning
+[2014-11-24 22:50:04,945] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:89} WARNING - 404 Warning
+[2014-11-24 22:51:14,425] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsac [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:51:14,431] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:51:27,161] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsac [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:51:27,162] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:51:35,270] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsac [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:51:35,276] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:53:38,483] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsac [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:53:38,489] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:54:18,610] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsac [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:54:18,616] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:54:21,990] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsaccc [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:54:21,991] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:57:00,233] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsaccc [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:57:00,240] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:57:38,233] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsaccc [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:57:38,239] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:57:39,829] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsaccc [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:57:39,830] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 22:57:41,649] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/cdcscsaccc [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 311, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 286, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 61] Connection refused
+[2014-11-24 22:57:41,650] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 23:05:24,104] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewfw [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/smtplib.py", line 615, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (534, '5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbusN\n5.7.14 c7pHcf9zeB1FgpmhoYI1zZsmkJnwvnxH8ULVnU7yZ3Lm3awBjBQflObG3SjyTCBd_jeyze\n5.7.14 cKGhnKp1OPXFKLZtL3P1h0q_s2uv1rey_6eLka1GPLpSeJZKo-Fv8bIdsKMU3O8IAJ9ix1\n5.7.14 hbSvrNk9kc7MpWdIEZY2dzQH_drD8OidsZTWe68mKm5wwu_lNwjv_hFQYhvsKK61-LI0bT\n5.7.14 bwGNG5Q> Please log in via your web browser and then try again.\n5.7.14 Learn more at\n5.7.14 https://support.google.com/mail/bin/answer.py?answer=78754 d2sm33203ioj.30 - gsmtp')
+[2014-11-24 23:05:24,113] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 23:06:27,122] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewfw [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 178, in send
+    "The message does not specify a sender and a default sender "
+AssertionError: The message does not specify a sender and a default sender has not been configured
+[2014-11-24 23:06:27,123] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-24 23:06:31,277] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewfwfe [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 88, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 41, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 178, in send
+    "The message does not specify a sender and a default sender "
+AssertionError: The message does not specify a sender and a default sender has not been configured
+[2014-11-24 23:06:31,278] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:82} WARNING - 500 Error
+[2014-11-25 06:17:19,805] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/werkzeug/_internal.py:87} ERROR - 127.0.0.1 - - [25/Nov/2014 06:17:19] code 400, message Bad request version ('RTSP/1.0')
+[2014-11-25 07:33:19,694] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewfwfe [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 90, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 44, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 181, in send
+    if message.has_bad_headers():
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 400, in has_bad_headers
+    headers = [self.sender, self.reply_to] + self.recipients
+TypeError: can only concatenate list (not "str") to list
+[2014-11-25 07:33:19,703] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:84} WARNING - 500 Error
+[2014-11-25 07:33:28,223] {/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py:1423} ERROR - Exception on /users/fewfwfef [GET]
+Traceback (most recent call last):
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1370, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask/app.py", line 1330, in handle_http_exception
+    return handler(e)
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 90, in page_not_found
+    send_email()
+  File "/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py", line 44, in send_email
+    mail.send(msg)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 181, in send
+    if message.has_bad_headers():
+  File "/Users/ryankelly/anaconda/envs/flask-taskr/lib/python2.7/site-packages/flask_mail.py", line 400, in has_bad_headers
+    headers = [self.sender, self.reply_to] + self.recipients
+TypeError: can only concatenate list (not "str") to list
+[2014-11-25 07:33:28,224] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:84} WARNING - 500 Error
+[2014-11-25 07:34:17,107] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:91} WARNING - 404 Warning
+[2014-11-25 07:40:56,886] {/Users/ryankelly/Documents/Projects/webdev/flask-taskr/project/views.py:109} WARNING - 404 Warning

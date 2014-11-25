@@ -4,10 +4,13 @@
 #### imports ####
 #################
 
-from project import app, db
+from project import app, db, mail
 from flask import flash, redirect, session, url_for, render_template
 from functools import wraps
 import logging
+from flask.ext.mail import Message
+from config import ADMINS
+from threading import Thread
 
 
 ##########################
@@ -30,9 +33,32 @@ def flash_errors(form):
             flash(u"Error in the {} field - {} error").format(
                 getattr(form, field).label.text, error)
 
+
+################
+#### EMAIL ###
+################
+
+def async(f):
+    def wrapper(*args, **kwargs):
+        thr = Thread(target=f, args=args, kwargs=kwargs)
+        thr.start()
+    return wrapper
+
+@async
+def send_async_email(app, msg):
+    with app.app_context():
+        mail.send(msg)
+
+def send_email():
+    msg = Message('test subject', sender=ADMINS[0], recipients=[ADMINS])
+    msg.body = 'text body'
+    msg.html = '<b>HTML</b> body'
+    send_async_email(app, msg)
+
 ################
 #### logging ###
 ################
+
 
 # ADMINS = ['kellyrm321@gmail.com']
 # if not app.debug:
@@ -57,12 +83,13 @@ if not app.debug:
     log.setLevel(logging.DEBUG)
     log.addHandler(handler)
 
+
+
 ################
 #### routes ####
 ################
 
 @app.route('/', defaults={'page': 'index'})
-
 def index(page):
     return redirect(url_for('tasks.tasks'))
     # app.logger.warning('A warning occurred (%d apples)', 42)
@@ -78,7 +105,9 @@ def internal_error(error):
 
 @app.errorhandler(404)
 def page_not_found(error):
+    send_email()
     app.logger.warning('404 Warning')
     return render_template('404.html'), 404
+
 
 
